@@ -1,4 +1,4 @@
-package com.example.sem4_java.servlet;
+package com.example.demo.servlet;
 
 import com.example.demo.dao.StudentDAO;
 import com.example.demo.dao.impl.StudentDAOImpl;
@@ -45,10 +45,9 @@ public class AddStudentServlet extends HttpServlet {
         try{
             String studentCode = req.getParameter("studentCode");
             String name = req.getParameter("name");
-            String birthday = req.getParameter("birthday");
+            String birthyear = req.getParameter("birthyear");
             String phone = req.getParameter("phone");
-            Date bod = dateFormat.parse(birthday);
-            StudentEntity student = new StudentEntity(studentCode,name,bod,phone);
+            StudentEntity student = new StudentEntity(studentCode,name,birthyear,phone);
             studentDAO.createStudent(student);
         }catch (Exception ex){
             System.out.printf(ex.getMessage());
