@@ -23,11 +23,11 @@ public class UploadFileServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Part filePart = request.getPart("file");
+        Part filePart = req.getPart("file");
         String fileName = filePart.getSubmittedFileName();
-        for (Part part : request.getParts()) {
+        for (Part part : req.getParts()) {
             part.write("C:\\upload\\" + fileName);
         }
-        response.getWriter().print("uploaded sucessfully.");
+        resp.getWriter().print("uploaded sucessfully.");
     }
 }
