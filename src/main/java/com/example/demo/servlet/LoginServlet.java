@@ -16,13 +16,13 @@ public class LoginServlet extends HttpServlet {
     private  final String password1 = "admin";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       resp.setContentType("text/html");
+        resp.setContentType("text/html");
         Writer writer = resp.getWriter();
         writer.write("<html><body>");
-        writer.write("<form action = 'login-servlet' method = 'POST'>");
-        writer.write("<input type = 'text' name = 'username' />");
-        writer.write("<input type = 'password' name = 'password' />");
-        writer.write("<input type = 'submit' name = 'Submit' />");
+        writer.write("<form action='login-servlet' method='POST' >");
+        writer.write("<input type='text' name='username' />");
+        writer.write("<input type='password' name='password' />");
+        writer.write("<input type='submit' value='Submit' />");
         writer.write("</form>");
         writer.write("</body></html>");
     }
