@@ -7,9 +7,9 @@ import com.example.demo.entity.CustomerEntity;
 import java.io.*;
 import java.util.Enumeration;
 import java.util.List;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
 
 
 public class HelloServlet extends HttpServlet {
@@ -25,8 +25,10 @@ public class HelloServlet extends HttpServlet {
         response.setContentType("text/html");
 
         CustomerEntity customerEntity = new CustomerEntity("T2203E FPT", 25, "B6");
-        customerDAO.createCustomer(customerEntity);
-        List<CustomerEntity> customerEntityList = customerDAO.getAllCustomer();
+        request.setAttribute("customer", customerEntity);
+        request.getRequestDispatcher("/demoJsp.jsp").forward(request,response);
+//        customerDAO.createCustomer(customerEntity);
+//        List<CustomerEntity> customerEntityList = customerDAO.getAllCustomer();
 
         // Hello
         String name = getInitParameter("name");
