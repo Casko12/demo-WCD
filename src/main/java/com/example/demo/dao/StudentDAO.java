@@ -1,7 +1,8 @@
 package dao;
 
-import com.example.demo.entity.StudentEntity;
-import com.example.demo.util.JpaUtils
+import entity.Student;
+import com.example.demo.util.JpaUtils;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
@@ -60,14 +61,22 @@ public class StudentDAO {
         return em.find(Student.class, id);
     }
 
-
+    //Tim theo quyen
+//    public List<User> findByRole(boolean role){
+//        String jpql = "Select o from Student o.admin:role";
+//        TypedQuery<User>  query = em.createQuery(jpql, User.class);
+//        return query.getResultList();
+//    }
+    //Tim theo keyword
     public List<Student> findByKeyWord(String keyword){
         String jpql = "Select o from Student o where  o.name like ?1";
         TypedQuery<Student>  query = em.createQuery(jpql, Student.class);
         query.setParameter(1, keyword);
         return query.getResultList();
     }
+    // Aps dung tim nhung cai khac theo y
 
+    //Tim kiem phan trang
     public List<Student> findPage(int page, int size){
         String jpql = "Select o from Student o";
         TypedQuery<Student> query = em.createQuery(jpql, Student.class);
@@ -76,7 +85,7 @@ public class StudentDAO {
         return query.getResultList();
     }
 
-
+    //lấy hêt Student
     public List<Student> findAll(){
         String jpql = "Select o from Student o";
         TypedQuery<Student> query = em.createQuery(jpql, Student.class);

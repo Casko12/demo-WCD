@@ -1,11 +1,13 @@
-package com.example.demo.entity;
+package entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "Students")
-
-public class StudentEntity {
+public class Student {
     @Id
     @Column(name = "Id")
     private String id;
@@ -19,7 +21,10 @@ public class StudentEntity {
     @Column(name = "Phone")
     private String phone;
 
-    public StudentEntity(String id, String name, String birth, String phone) {
+    public Student() {
+    }
+
+    public Student(String id, String name, String birth, String phone) {
         this.id = id;
         this.name = name;
         this.birth = birth;

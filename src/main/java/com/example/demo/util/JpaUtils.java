@@ -1,4 +1,4 @@
-package util;
+package com.example.demo.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
