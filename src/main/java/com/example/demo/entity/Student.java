@@ -1,22 +1,23 @@
 package entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "Students")
 public class Student {
     @Id
     @Column(name = "Id")
-    private String id;
+    private Integer id;
+    @Column(name = "Image")
+    private String image;
 
     @Column(name = "Name")
     private String name;
 
-    @Column(name = "Birth")
-    private  String birth;
+    @Column(name = "Birthday")
+    private Date birthday;
 
     @Column(name = "Phone")
     private String phone;
@@ -24,18 +25,19 @@ public class Student {
     public Student() {
     }
 
-    public Student(String id, String name, String birth, String phone) {
+    public Student(Integer id, String image, String name, Date birthday, String phone) {
         this.id = id;
+        this.image = image;
         this.name = name;
-        this.birth = birth;
+        this.birthday = birthday;
         this.phone = phone;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -47,19 +49,27 @@ public class Student {
         this.name = name;
     }
 
-    public String getBirth() {
-        return birth;
-    }
-
-    public void setBirth(String birth) {
-        this.birth = birth;
-    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 }

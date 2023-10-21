@@ -2,7 +2,6 @@ package dao;
 
 import entity.Student;
 import com.example.demo.util.JpaUtils;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
