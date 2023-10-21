@@ -1,53 +1,37 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "student")
 
 public class StudentEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String studentCode;
+    @Column(name = "Id")
+    private String id;
 
+    @Column(name = "Name")
     private String name;
-    private String birthyear;
+
+    @Column(name = "Birth")
+    private  String birth;
+
+    @Column(name = "Phone")
     private String phone;
 
-    public StudentEntity(Integer id, String studentCode, String name, String birthyear, String phone) {
+    public StudentEntity(String id, String name, String birth, String phone) {
         this.id = id;
-        this.studentCode = studentCode;
         this.name = name;
-        this.birthyear = birthyear;
+        this.birth = birth;
         this.phone = phone;
     }
 
-    public StudentEntity() {
-    }
-
-    public StudentEntity(String studentCode, String name, String birthyear, String phone) {
-        this.studentCode = studentCode;
-        this.name = name;
-        this.birthyear = birthyear;
-        this.phone = phone;
-    }
-
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public String getStudentCode() {
-        return studentCode;
-    }
-
-    public void setStudentCode(String studentCode) {
-        this.studentCode = studentCode;
     }
 
     public String getName() {
@@ -58,12 +42,12 @@ public class StudentEntity {
         this.name = name;
     }
 
-    public String getBirthyear() {
-        return birthyear;
+    public String getBirth() {
+        return birth;
     }
 
-    public void setBirthyear(String birthyear) {
-        this.birthyear = birthyear;
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 
     public String getPhone() {

@@ -1,7 +1,6 @@
 package com.example.demo.servlet;
 
 import com.example.demo.dao.StudentDAO;
-import com.example.demo.dao.impl.StudentDAOImpl;
 import com.example.demo.entity.StudentEntity;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,10 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @WebServlet(value = "/add-student")
-public class AddStudentServlet extends HttpServlet {
+public class StudentServlet extends HttpServlet {
     private StudentDAO studentDAO;
 
     public void init(){

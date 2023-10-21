@@ -1,7 +1,6 @@
 package com.example.demo.servlet;
 
 import com.example.demo.dao.StudentDAO;
-import com.example.demo.dao.impl.StudentDAOImpl;
 import com.example.demo.entity.StudentEntity;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
